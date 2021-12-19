@@ -1,17 +1,17 @@
 import Head from 'next/head'
+import Feed from '../components/Feed'
 import Header from '../components/Header'
 
 export default function Home() {
   return (
-    <div>
+    <div className='bg-gray-50 h-screen overflow-y-scroll'>
       <Head>
         <title>Instagram Clone</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <Header />
-
-      <h1>Instagram clone</h1>
+      <Feed />
     </div>
   )
 }
