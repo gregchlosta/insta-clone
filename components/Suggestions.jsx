@@ -21,8 +21,9 @@ export default function Suggestions() {
         <button className='text-gray-400 font-semibold'>See All</button>
       </div>
 
-      {suggestions.map((profile, i) => (
+      {suggestions.map((profile) => (
         <Suggestion
+          key={profile.id}
           image='https://lh3.googleusercontent.com/ogw/ADea4I76Q-SDgTSHa-wldtLHkCmsu9rH7Qh4uhGjKnrZdA=s83-c-mo'
           username={profile.username}
           companyName={profile.company.name}
