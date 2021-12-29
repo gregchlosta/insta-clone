@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react'
+import { useSession } from 'next-auth/react'
+import Comment from './Comment'
+import { db } from '../firebase'
 import {
   BookmarkIcon,
   ChatIcon,
@@ -6,7 +10,6 @@ import {
   HeartIcon,
   PaperAirplaneIcon,
 } from '@heroicons/react/outline'
-
 import { HeartIcon as HeartIconSolid } from '@heroicons/react/solid'
 import {
   doc,
@@ -19,10 +22,6 @@ import {
   setDoc,
   deleteDoc,
 } from 'firebase/firestore'
-import { useSession } from 'next-auth/react'
-import { useEffect, useState } from 'react/cjs/react.development'
-import { db } from '../firebase'
-import Comment from './Comment'
 
 export default function Post({ id, username, userImg, img, caption }) {
   const { data: session } = useSession()
