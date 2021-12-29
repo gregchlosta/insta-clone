@@ -1,9 +1,8 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, Fragment } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRecoilState } from 'recoil'
 import { modalState } from '../atoms/modalAtom'
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react/cjs/react.development'
 import { CameraIcon } from '@heroicons/react/outline'
 import { db, storage } from '../firebase'
 import {
