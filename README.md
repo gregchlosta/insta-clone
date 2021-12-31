@@ -1,29 +1,43 @@
-# Next.js + Tailwind CSS Example
+# Insta-Clone
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+> Instagram Clone built with the Next.js, TailwindCSS, Firebase 9 and Recoil.
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+Here is a [Insta-Clone Demo](https://insta-clone-mu.vercel.app/)
 
-## Preview
+## Features
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+- Works on desktop and mobile
+- Full user authnetication and authorization with Google Account
+- Create posts
+- Add and remove posts likes
+- Add post comments
+- ... more is comming!
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+### Env Variables
 
-## Deploy your own
+Create a .env.local file in root folder and add the following
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+```
+GOOGLE_CLIENT_ID=[From Firebase Auth]
+GOOGLE_SECRET=[From Firebase Auth]
+NEXTAUTH_URL=http://localhost:3000
+JWT_SECRET=some_super_secret_value
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Install Dependencies
+
+```
+npm install
+```
+
+### Run
+
+```
+npm run dev
+```
+
+## License
+
+The MIT License
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND
