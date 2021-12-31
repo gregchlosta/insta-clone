@@ -14,7 +14,7 @@ import {
 } from 'firebase/firestore'
 import { ref, getDownloadURL, uploadString } from 'firebase/storage'
 
-export default function Modal() {
+export default function AddPostModal() {
   const { data: session } = useSession()
   const [open, setOpen] = useRecoilState(modalState)
   const [selectedFile, setSelectedFile] = useState(null)

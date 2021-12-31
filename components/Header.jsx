@@ -26,7 +26,7 @@ export default function Header() {
           className='relative hidden lg:inline-grid w-24 cursor-pointer'
         >
           <Image
-            src='http://links.papareact.com/ocw'
+            src='/images/instagram_logo.svg'
             layout='fill'
             objectFit='contain'
           />
@@ -37,7 +37,7 @@ export default function Header() {
           className='relative lg:hidden flex-shrink-0 w-10 cursor-pointer'
         >
           <Image
-            src='http://links.papareact.com/jjm'
+            src='/images/instagram_logo_small.svg'
             layout='fill'
             objectFit='contain'
           />

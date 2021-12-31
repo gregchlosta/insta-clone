@@ -23,7 +23,7 @@ import {
   deleteDoc,
 } from 'firebase/firestore'
 
-export default function Post({ id, username, userImg, img, caption }) {
+export default function Post({ id, username, profileImg, image, caption }) {
   const { data: session } = useSession()
   const [comment, setComment] = useState('')
   const [comments, setComments] = useState([])
@@ -37,7 +37,13 @@ export default function Post({ id, username, userImg, img, caption }) {
           collection(db, 'posts', id, 'comments'),
           orderBy('timestamp', 'desc')
         ),
-        (snapshot) => setComments(snapshot.docs)
+        (snapshot) => {
+          const comments = snapshot.docs.map((comment) => ({
+            ...comment.data(),
+            id: comment.id,
+          }))
+          setComments(comments)
+        }
       ),
     [db, id]
   )
@@ -89,7 +95,7 @@ export default function Post({ id, username, userImg, img, caption }) {
       {/* User Image */}
       <div className='flex items-center p-5'>
         <img
-          src={userImg}
+          src={profileImg}
           className='rounded-full h-12 w-12 object-contain border p-1 mr-3'
           alt=''
         />
@@ -98,7 +104,7 @@ export default function Post({ id, username, userImg, img, caption }) {
       </div>
 
       {/* Image */}
-      <img src={img} className='object-cover w-full' alt='' />
+      <img src={image} className='object-cover w-full' alt='' />
 
       {/* Buttons */}
       {session && (
@@ -133,10 +139,10 @@ export default function Post({ id, username, userImg, img, caption }) {
           {comments.map((comment) => (
             <Comment
               key={comment.id}
-              image={comment.data().userImage}
-              comment={comment.data().comment}
-              username={comment.data().username}
-              date={comment.data().timestamp?.toDate()}
+              userImage={comment.userImage}
+              comment={comment.comment}
+              username={comment.username}
+              date={comment.timestamp?.toDate()}
             />
           ))}
         </div>

@@ -1,4 +1,5 @@
 import { getProviders, signIn } from 'next-auth/react'
+import Image from 'next/image'
 import Header from '../components/Header'
 
 export default function Login({ providers }) {
@@ -6,7 +7,11 @@ export default function Login({ providers }) {
     <>
       <Header />
       <div className='flex flex-col items-center justify-center min-h-screen py-2 mt-5 px-14 text-center'>
-        <img className='w-80' src='https://links.papareact.com/ocw' alt='' />
+        <img
+          className='w-80'
+          src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png'
+          alt=''
+        />
 
         <p className='font-xs italic'>
           This is not a REAL app, it is build for educational purpose only
